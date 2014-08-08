@@ -1,4 +1,4 @@
-Набор классов для загрузки файлов Yii 2
+Yii 2 File Upload
 ===========================
 
 ## Установка
@@ -68,22 +68,20 @@ php composer.phar require --prefer-dist mihaildev/yii2-file-upload "*"
 	}
 ```
 
-Замечание!!! аттрибуты должны хранится в базе!
+Замечание!!! аттрибуты должны храниться в базе!
 
-обработка изображений производится с помощью библиотеки https://github.com/yiisoft/yii2-imagine
+Обработка изображений производится с помощью библиотеки https://github.com/yiisoft/yii2-imagine
 
-функци Image::aligning не входит в стандартную библиотеку тут я использую свою библиотеку https://github.com/MihailDev/yii2-imagine
+Функци Image::aligning не входит в стандартную библиотеку тут я использую свою библиотеку https://github.com/MihailDev/yii2-imagine
 
 для получения пути в модели воспользуйтесь функцией $this->getUploadedFilePath($attributeName);
 для получения ссылки в модели воспользуйтесь функцией $this->getUploadedFileUrl($attributeName);
 
-для изображений
-$this->getUploadedFilePath($attributeName); - получить путь на оновное изображение
-
+Для изображений
+$this->getUploadedFilePath($attributeName); - получить путь на основное изображение
 $this->getUploadedFilePath($attributeName, $thumbId); - получить путь на дополнительное изображение
 
-$this->getUploadedFileUrl($attributeName); - получить ссылку на оновное изображение
-
+$this->getUploadedFileUrl($attributeName); - получить ссылку на основное изображение
 $this->getUploadedFileUrl($attributeName, $thumbId); - получить ссылку на дополнительное изображение
 
 пример на основе показанных выше настроек
