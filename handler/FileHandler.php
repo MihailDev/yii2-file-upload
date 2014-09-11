@@ -55,7 +55,7 @@ class FileHandler extends BaseHandler{
 
 			$this->behavior->owner->{$this->attribute} = $this->_file->baseName . '.' . $this->_file->extension;
 		}else{
-			if($this->_beforeValidateAttributeValue === FileUploadBehavior::DELETE_VALUE){
+			if($this->_beforeValidateAttributeValue === FileUploadBehavior::DELETE_VALUE || empty($oldModel)){
 				if(!empty($oldModel))
 					$this->deleteFiles($oldModel);
 
