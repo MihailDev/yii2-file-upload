@@ -91,7 +91,7 @@ class FileHandler extends BaseHandler{
 
 		if ($this->_file instanceof UploadedFile) {
 			$path = $this->getFilePath();
-			@mkdir(pathinfo($path, PATHINFO_DIRNAME), 777, true);
+			@mkdir(pathinfo($path, PATHINFO_DIRNAME), 0777, true);
 			if (!$this->_file->saveAs($path)) {
 				throw new Exception('File saving error. Path: '.$path);
 			}
@@ -181,7 +181,7 @@ class FileHandler extends BaseHandler{
 		$path = $this->getFilePath();
 
 		if($oldPath !== $path && !empty($oldPath) && !empty($path)){
-			@mkdir(pathinfo($path, PATHINFO_DIRNAME), 777, true);
+			@mkdir(pathinfo($path, PATHINFO_DIRNAME), 0777, true);
 			@rename($oldPath, $path);
 		}
 	}

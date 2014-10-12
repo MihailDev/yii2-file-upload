@@ -69,7 +69,7 @@ class ImageHandler extends FileHandler{
 		$image = call_user_func($imagine, $this->getFilePath());
 
 		$imagePath = $this->getFilePath($id);
-		@mkdir(pathinfo($imagePath, PATHINFO_DIRNAME), 777, true);
+		@mkdir(pathinfo($imagePath, PATHINFO_DIRNAME), 0777, true);
 
 		$image->save($imagePath, $saveOptions);
 	}
@@ -114,7 +114,7 @@ class ImageHandler extends FileHandler{
 		$path = $this->getFilePath($id);
 
 		if($oldPath !== $path && !empty($oldPath) && !empty($path)){
-			@mkdir(pathinfo($path, PATHINFO_DIRNAME), 777, true);
+			@mkdir(pathinfo($path, PATHINFO_DIRNAME), 0777, true);
 			@rename($oldPath, $path);
 		}
 	}
